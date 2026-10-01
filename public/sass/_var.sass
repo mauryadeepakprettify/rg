@@ -1,6 +1,6 @@
-$Lato: 'lato'
-$Afacad: 'afacad'
-$Palmaton: 'palmaton'
+$Lato: var(--font-lato)
+$Afacad: var(--font-afacad-flux)
+$Palmaton: var(--font-palmaton)
 
 $primary: var(--primary)
 $secondary: var(--secondary)
@@ -84,6 +84,12 @@ $black-filter: brightness(0) saturate(100%)
         user-select: none
         background: $background
         transition: .5s ease
+
+@mixin gradient-text($gradient: $gradient-a)
+    background: $gradient
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 @mixin line-clamp($line: 3)
     display: -webkit-box

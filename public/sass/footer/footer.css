@@ -338,7 +338,7 @@ html {
   --secondary: #01243D;
   --bgcolor: $white;
   --primary-hover: #000;
-  --gradient-a: linear-gradient(90deg, #2E3192 0%, #EC1F27 100%);
+  --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%);
   --gradient-b: linear-gradient(90deg, #EC1F27 0%, #2E3192 100%);
   --text: #666666;
   --green: green;
@@ -405,7 +405,7 @@ body, html {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: normal;
-  font-family: "lato";
+  font-family: var(--font-lato);
 }
 
 a {
@@ -547,12 +547,12 @@ svg path {
 }
 
 ul li {
-  font-family: "lato";
+  font-family: var(--font-lato);
   color: var(--text);
 }
 
 body ul li {
-  font-family: "lato";
+  font-family: var(--font-lato);
   color: var(--text);
   font-weight: 500;
   font-size: 16px;
@@ -592,7 +592,7 @@ h1 {
 }
 
 h2 {
-  font-family: "lato";
+  font-family: var(--font-lato);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.3;
@@ -643,7 +643,7 @@ h6 {
 }
 
 a, p {
-  font-family: "lato";
+  font-family: var(--font-lato);
 }
 
 p {
@@ -717,13 +717,13 @@ img {
 }
 
 button, select {
-  font-family: "lato";
+  font-family: var(--font-lato);
   font-size: inherit;
   cursor: pointer;
 }
 
 input {
-  font-family: "lato";
+  font-family: var(--font-lato);
   font-size: inherit;
   border-radius: 0;
 }
@@ -921,7 +921,7 @@ button {
 .btn {
   border-radius: 25px;
   padding: 11px 18px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1;
   display: inline-block;
@@ -929,6 +929,12 @@ button {
   transition: 0.4s ease;
   position: relative;
   z-index: 1;
+  font-family: var(--font-lato);
+}
+.btn span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .btn.white-btn {
   background: var(--white);
@@ -1012,6 +1018,38 @@ button {
   color: var(--white);
   font-size: 16px !important;
   font-weight: 600 !important;
+}
+.btn.btn-animate {
+  color: var(--primary);
+  position: relative;
+  padding: 14px 36.5px;
+  overflow: hidden;
+}
+.btn.btn-animate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/icon/border.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.btn.btn-animate::after {
+  content: "";
+  position: absolute;
+  width: 97px;
+  height: 97px;
+  top: 50%;
+  left: 0;
+  background: linear-gradient(90deg, rgba(172, 120, 32, 0) 0%, rgba(213, 164, 83, 0.5) 50%, rgba(172, 120, 32, 0) 100%);
+  transform: translate(-5%, -50%);
+  animation: slide 3s linear infinite;
+  z-index: 1;
+}
+.btn.btn-animate span {
+  position: relative;
+  z-index: 2;
 }
 .btn.gray-border {
   background: transparent;
@@ -1547,18 +1585,18 @@ button {
   transition: 0.5s ease;
 }
 .banner:not(.banner-banner)::before {
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 35.58%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 54.81%), linear-gradient(360deg, rgba(0, 0, 0, 0.85) 10.58%, rgba(0, 0, 0, 0) 52.88%);
 }
 .banner.center-banner .banner-wrapper {
-  bottom: 50%;
-  translate: 0 50%;
+  left: 50%;
+  translate: -50% 0px;
 }
 .banner.common-banner {
   padding: 90px 0;
 }
 .banner .bg {
   line-height: 0;
-  height: calc(100vh - var(--headerheight));
+  height: 100vh;
 }
 @media only screen and (max-width: 1152px) {
   .banner .bg {
@@ -1580,7 +1618,7 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 15%;
+  bottom: 12%;
   z-index: 3;
 }
 @media only screen and (max-width: 520px) {
@@ -1949,4 +1987,83 @@ button {
   top: calc(100% + 1px);
   left: 0;
   right: 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(-5%, -50%);
+  }
+  50% {
+    transform: translate(120%, -50%);
+  }
+  100% {
+    transform: translate(-5%, -50%);
+  }
+}
+footer {
+  background: #002D4F;
+}
+footer .upper-col {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1490196078);
+}
+footer .upper-col .container {
+  padding: 40px var(--containerfluid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .upper-col .container .col-a p, footer .upper-col .container .col-a a {
+  font-size: 24px;
+  color: var(--white);
+}
+footer .upper-col .container .col-b ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+footer .mid-col .container {
+  padding: 20px var(--containerfluid) 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+footer .mid-col .container .col-a p {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--white);
+  opacity: 0.7;
+}
+footer .mid-col .container .col-a p:last-child {
+  opacity: 1;
+  margin-top: 12px;
+}
+footer .mid-col .container .col-b {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+footer .mid-col .container .col-b figure img {
+  width: 65px;
+  height: 65px;
+}
+footer .mid-col .container .col-b figcaption {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--white);
+}
+footer .bottom-col .container {
+  padding: 0px var(--containerfluid) 10px;
+}
+footer .bottom-col .container p {
+  color: var(--white);
+  opacity: 0.7;
+  font-size: 12px;
+}
+footer .bottom-col .container img {
+  vertical-align: middle;
+  margin-left: 12px;
 }/*# sourceMappingURL=footer.css.map */

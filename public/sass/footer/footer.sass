@@ -1,2 +1,66 @@
 @import '../_common'
 
+footer
+    background: #002D4F
+    .upper-col
+        border-bottom: 1px solid #FFFFFF26
+        .container
+            padding: 40px var(--containerfluid)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            .col-a
+                p, a
+                    font-size: 24px
+                    color: $white
+            .col-b
+                ul
+                    display: flex
+                    align-items: center
+                    gap: 24px
+    .mid-col 
+        .container
+            padding: 20px var(--containerfluid) 0
+            display: flex
+            justify-content: space-between
+            gap: 100px
+            .col-a
+                p
+                    font-size: 13px
+                    @include font(400)
+                    color: $white
+                    opacity: .7
+                    &:last-child
+                        opacity: 1
+                        margin-top: 12px
+            .col-b
+                flex-shrink: 0
+                display: flex
+                justify-content: center
+                flex-direction: column
+                align-items: center
+                gap: 6px
+                figure
+                    img
+                        width: 65px
+                        height: 65px
+                figcaption
+                    font-weight: 500
+                    font-size: 12px
+                    line-height: 1.5
+                    color: $white
+
+
+
+
+    .bottom-col
+        .container
+            padding: 0px var(--containerfluid) 10px
+            p
+                color: $white
+                opacity: .7
+                font-size: 12px
+            img
+                vertical-align: middle
+                margin-left: 12px
+

@@ -29,7 +29,7 @@ html
     --bgcolor: $white
     --primary-hover: #000
 
-    --gradient-a: linear-gradient(90deg, #2E3192 0%, #EC1F27 100%)
+    --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%);
     --gradient-b: linear-gradient(90deg, #EC1F27 0%, #2E3192 100%)
     // --gradient-b: linear-gradient(260deg, #173254 0%, #0B6DE8 100%)
 
@@ -397,7 +397,7 @@ button
 .btn
     border-radius: 25px
     padding: 11px 18px
-    font-weight: 600
+    font-weight: 400
     font-size: 16px
     line-height: 1
     display: inline-block
@@ -407,6 +407,11 @@ button
     transition: 0.4s ease
     position: relative
     z-index: 1
+    font-family: $Lato
+    span
+        display: flex
+        align-items: center
+        gap: 12px 
     &.white-btn
         background: $white
         border: 1px solid $white
@@ -475,6 +480,44 @@ button
             color: $white
             font-size: 16px !important
             font-weight: 600 !important
+    &.btn-animate
+        color: $primary
+        position: relative
+        padding: 14px 36.5px
+        overflow: hidden
+
+        &::before
+            content: ""
+            position: absolute
+            inset: 0
+            background: url('../../../public/icon/border.png')
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            z-index: 2
+
+        &::after
+            content: ""
+            position: absolute
+            width: 97px
+            height: 97px
+            top: 50%
+            left: 0
+            background: linear-gradient(
+                90deg,
+                rgba(172, 120, 32, 0) 0%,
+                rgba(213, 164, 83, 0.5) 50%,
+                rgba(172, 120, 32, 0) 100%
+            )
+            transform: translate(-5%, -50%)
+            animation: slide 3s linear infinite
+            z-index: 1 
+ 
+        span
+            position: relative
+            z-index: 2
+
+
 
     &.gray-border
         background: transparent
@@ -882,16 +925,17 @@ button
     &:not(.banner-banner)
         @include before
         &::before
-            background: linear-gradient(270deg, rgba(0, 0, 0, 0) 35.58%, rgba(0, 0, 0, 0.65) 100%)
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 54.81%), linear-gradient(360deg, rgba(0, 0, 0, 0.85) 10.58%, rgba(0, 0, 0, 0) 52.88%);
+
     &.center-banner
         .banner-wrapper
-            bottom: 50%
-            translate: 0 50%
+            left: 50%
+            translate: -50% 0px
     &.common-banner
         padding: 90px 0
     .bg
         line-height: 0
-        height: calc(100vh - var(--headerheight))
+        height: 100vh
         @include media(1152)
             height: 520px
         @include media(520)
@@ -905,7 +949,7 @@ button
         position: absolute
         left: 0
         right: 0
-        bottom: 15%
+        bottom: 12%
         z-index: 3
         @include media(520)
             bottom: 18%
@@ -1176,3 +1220,14 @@ button
     top: calc(100% + 1px)
     left: 0
     right: 0
+
+
+@keyframes slide
+    0%
+        transform: translate(-5%, -50%)
+
+    50%
+        transform: translate(120%, -50%)
+
+    100%
+        transform: translate(-5%, -50%)

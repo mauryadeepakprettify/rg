@@ -1,7 +1,7 @@
 import { Lato, Afacad_Flux } from "next/font/google";
 import localFont from "next/font/local";
 import "@/public/sass/header/header.css"
-import MainTemplate from "@/components/(frontendcomponents)/templates/MainTemplate";
+import MainTemplate from "@/components/frontendcomponents/templates/MainTemplate";
 
 const lato = Lato({
   weight: ["300", "400", "700", "900"],
@@ -10,9 +10,8 @@ const lato = Lato({
 });
 
 const afacad = Afacad_Flux({
-  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-afacad",
+  variable: "--font-afacad-flux",
 });
 
 const palmaton = localFont({

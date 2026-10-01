@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import Button from "../atoms/Button"
 
 const Header = () => {
     return (
@@ -11,8 +12,9 @@ const Header = () => {
 
                 <ul className="nav">
                     <li>
-
+                        <Button className="btn-animate"> Schedule a Site Visit </Button>
                     </li>
+
                     <li>
                         <button className="ham-btn">
                             {

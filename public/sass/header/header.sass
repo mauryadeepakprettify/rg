@@ -1,10 +1,13 @@
 @import '../_common'
 
 header
+    z-index: 10
     position: fixed
     left: 0
     right: 0
     top: 0
+    &.header-fixed
+        background: $white
     .header-wrapper
         display: flex
         justify-content: space-between
@@ -12,11 +15,13 @@ header
         padding: 10px var(--containerfluid)
         .logo
             img
-                max-width: 106px
+                max-width: 149px
                 height: 100%
                 object-fit: cover
-                
         .nav
+            display: flex
+            align-items: center
+            gap: 42px
             li
                 .ham-btn
                     span
@@ -24,13 +29,10 @@ header
                         height: 1px
                         background-color: $primary
                         &:not(:last-child)
-                            margin-bottom: 5px
+                            margin-bottom: 7.5px
                         &:first-child
                             width: 46px
                         &:nth-child(2)
                             width: 40px
                         &:last-child
                             width: 35px
-                        
-                        
-
