@@ -1,0 +1,36 @@
+@import '../_common'
+
+header
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    .header-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 10px var(--containerfluid)
+        .logo
+            img
+                max-width: 106px
+                height: 100%
+                object-fit: cover
+                
+        .nav
+            li
+                .ham-btn
+                    span
+                        display: block
+                        height: 1px
+                        background-color: $primary
+                        &:not(:last-child)
+                            margin-bottom: 5px
+                        &:first-child
+                            width: 46px
+                        &:nth-child(2)
+                            width: 40px
+                        &:last-child
+                            width: 35px
+                        
+                        
+
