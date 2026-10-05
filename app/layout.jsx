@@ -20,6 +20,12 @@ const palmaton = localFont({
   variable: "--font-palmaton",
 });
 
+const telegraph = localFont({
+  src: "../public/font/TelegrafBold.woff2",
+  display: "swap",
+  variable: "--font-telegraf",
+});
+
 export const metadata = {
   title: "RG's Pleiades",
   description: "The 7 Star Living",
@@ -29,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${lato.variable} ${afacad.variable} ${palmaton.variable}`}
+      className={`${lato.variable} ${afacad.variable} ${palmaton.variable} ${telegraph.variable}`}
     >
       <body><MainTemplate>{children}</MainTemplate></body>
     </html>

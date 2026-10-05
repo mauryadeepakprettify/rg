@@ -6,15 +6,34 @@ header
     left: 0
     right: 0
     top: 0
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: $secondary
+        height: 0
+        width: 100%
+        transition: .4s ease-in-out
+        z-index: 1
+        opacity: 0
     &.header-fixed
-        background: $white
+        &::before
+            height: 100%
+            opacity: 1
+        .header-wrapper
+            .logo
+                img
+                    max-width: 108px
     .header-wrapper
+        z-index: 2
+        position: relative
         display: flex
         justify-content: space-between
         align-items: center
         padding: 10px var(--containerfluid)
         .logo
             img
+                transition: .4s ease-in-out
                 max-width: 149px
                 height: 100%
                 object-fit: cover

@@ -1,10 +1,25 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import Button from "../atoms/Button"
+import { useEffect, useState } from "react"
 
 const Header = () => {
+
+    const [isHeaderFixed, setIsHeaderFixed] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                setIsHeaderFixed(true)
+            } else {
+                setIsHeaderFixed(false)
+            }
+        })
+    }, [])
+
     return (
-        <header>
+        <header className={isHeaderFixed ? "header-fixed" : ""}>
             <div className="header-wrapper">
                 <Link href="/" className="logo">
                     <Image src="/logo.svg" width={149} height={106} alt="Logo" />

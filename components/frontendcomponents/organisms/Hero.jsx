@@ -1,7 +1,7 @@
 
 const Hero = () => {
     return (
-        <section className='banner center-banner home-banner'>
+        <section className='banner center-banner home-banner border-b-gradient'>
             <div className="bg">
                 <video src="/video/home-banner.mp4" autoPlay loop muted playsInline>
                     Your browser does not support the video tag.

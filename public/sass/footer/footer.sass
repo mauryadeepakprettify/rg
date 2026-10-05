@@ -1,11 +1,11 @@
 @import '../_common'
 
 footer
-    background: #002D4F
+    background: var(--secondary-a)
     .upper-col
         border-bottom: 1px solid #FFFFFF26
+        padding: 40px 0
         .container
-            padding: 40px var(--containerfluid)
             display: flex
             justify-content: space-between
             align-items: center
@@ -19,8 +19,8 @@ footer
                     align-items: center
                     gap: 24px
     .mid-col 
+        padding: 20px 0
         .container
-            padding: 20px var(--containerfluid) 0
             display: flex
             justify-content: space-between
             gap: 100px
@@ -49,13 +49,10 @@ footer
                     font-size: 12px
                     line-height: 1.5
                     color: $white
-
-
-
-
+                    
     .bottom-col
+        padding: 0px 0 10px 0
         .container
-            padding: 0px var(--containerfluid) 10px
             p
                 color: $white
                 opacity: .7

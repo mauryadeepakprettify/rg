@@ -1,6 +1,5 @@
 @import '../_common'
 
-
 .banner.home-banner
     .banner-wrapper
         .content
@@ -19,7 +18,7 @@
                 font-family: $Afacad
                 display: flex
                 align-items: end
-                gap: 24px 
+                gap: 24px
                 span
                     font-family: $Palmaton
                     font-size: 120px
@@ -27,3 +26,228 @@
                     line-height: 1.4
             p
                 max-width: 425px
+
+.home-secA
+    background: var(--secondary)
+    padding: 20px 0
+    .container
+        .row
+            display: grid
+            grid-template-columns: auto 1fr
+            .col-a
+                border-right: 1px solid #FFFFFF42
+                h2
+                    padding: 10px 45px 16px 0px
+                    display: flex
+                    align-items: end
+                    gap: 10px
+                    color: $white
+                    font-size: 20px
+                    @include font(400)
+                    line-height: 1
+                    span
+                        color: $white
+                        font-family: $Palmaton
+                        font-size: 32px
+                        @include font(400)
+            .col-b
+                padding: 0 45px
+                display: flex
+                justify-content: center
+                align-items: cemter
+                gap: 80px
+                li
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    gap: 10px
+                    .icon
+                        width: 40px
+                        height: 40px
+                    figcaption
+                        p
+                            color: $white
+                            font-size: 16px
+                            @include font(500)
+                            @include gradient-text
+
+.home-secB
+    background: var(--secondary-a)
+    padding: 120px 0 100px 0
+    .container
+        .row
+            display: grid
+            grid-template-columns: 481px 1fr
+            align-items: center
+            gap: 100px
+            .col-a
+                figure
+                    height: 453px
+                    overflow: hidden
+                    width: 100%
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        object-position: center
+                        clip-path: polygon(0 0, 100% 19%, 100% 90%, 0 100%)
+
+            .col-b
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 40%
+                    right: 0
+                    transform: translateY(-50%)
+                    @include radial-blur()
+
+                h2
+                    font-size: 24px
+                    color: $white
+                    @include font(400)
+                    position: relative
+                    padding: 0 0 130px 50px
+                    span
+                        font-family: $Palmaton
+                        @include gradient-text
+                        font-size: 150px
+                        @include font(400)
+                        position: absolute
+                        left: 0
+                        bottom: 0
+                .website-content
+                    z-index: 2
+                    position: relative
+                    max-width: 505px
+                    margin-top: 14px
+                    p, li
+                        text-align: left
+                .btn
+                    margin-top: 32px
+                    padding: 14px 20px
+
+.home-secD
+    position: relative
+
+    video
+        display: block
+        width: 100%
+        height: 100%
+        max-height: 686px
+        object-fit: cover
+    img
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 100%
+        z-index: 0
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 46.63%)
+        z-index: 1
+
+    .container
+        padding: 60px var(--containerfluid) 72px
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 0
+        z-index: 2
+        .content
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            align-items: center
+            height: 100%
+            p
+                font-size: 36px
+                @include font(700)
+                font-family: Lato
+                color: $white
+                max-width: 380px
+                text-align: center
+            h2
+                @include gradient-text
+                font-size: 48px
+                @include font(700)
+                font-family: $Telegraf
+                span
+                    font-family: $Palmaton
+                    @include font(400)
+                    font-size: 96px
+
+.home-secE
+    background: var(--secondary)
+    padding: 60px 0       
+    position: relative
+    .container
+        .heading
+            h2
+        .content
+            .swiper-nav
+                flex-direction: column
+                position: absolute
+                top: 55%
+                transform: translateY(-50%)
+                right: 172px
+            .aminity-slider
+                border-radius: 34px
+                width: 662px
+                height: 291px
+                position: absolute 
+                top: 55.5%
+                left: 50.7%
+                transform: translate(-50%, -50%)
+                .swiper-wrapper
+                    .swiper-slide
+                        position: relative
+                        &::before
+                            position: absolute
+                            inset: 0
+                            content: ""
+                            z-index: 1
+                        img
+                            z-index: 0
+                            width: 100%
+                            height: 100%
+                            object-fit: cover
+                            object-position: center
+            .aminity-text-slider
+                position: absolute
+                height: 28px
+                top: 66%
+                left: 50%
+                transform: translate(-50%, -50%)
+                .swiper-wrapper
+                    .swiper-slide
+                        h4
+                            font-size: 24px
+                            color: $white
+                            font-family: $Lato
+                
+            .aminity-navigation
+                position: absolute
+
+
+                
+
+.home-secF
+    background: var(--secondary)
+    padding: 60px 0
+    .container
+        .heading
+            h2
+
+.home-secG
+    video
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+        max-height: 664px

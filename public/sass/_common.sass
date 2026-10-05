@@ -26,17 +26,19 @@ html
         --headerheight: 75px
     --primary: #ECD167
     --secondary: #01243D
+    --secondary-a: #002D4F
+    --secondary-b: #095287
     --bgcolor: $white
     --primary-hover: #000
 
-    --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%);
+    --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%)
     --gradient-b: linear-gradient(90deg, #EC1F27 0%, #2E3192 100%)
-    // --gradient-b: linear-gradient(260deg, #173254 0%, #0B6DE8 100%)
 
-    // --gradient-c: linear-gradient(270deg, #D8D8D8 0%, #EBEBEB 50%, #C5C5C5 100%)
+    --gradient-c: linear-gradient(270deg, #01243D 0%, #ECD382 50%, #01243D 100%) 
+
     // --gradient-d: linear-gradient(360deg, #E6E6E6 0%, #C6C6C6 100%)
     // --gradient-e: linear-gradient(180deg, #E5E5E5 0%, #FFFFFF 46.5%, #F6F6F6 100%)
-    --text: #666666
+    --text: #FFFFFFB2
     --green: green
     --white: #FFFFFF
     --litewhite: #c0c0c0
@@ -671,6 +673,8 @@ button
     align-items: center
     gap: 20px
     flex-direction: row-reverse
+    .swiper-next
+        transform: rotate(180deg)
     .swiper-prev,.swiper-next
         --size: 45px
         height: var(--size)
@@ -685,8 +689,8 @@ button
         border: 1px solid $secondary
         background: $white
         svg path
-        transition: 0.5s ease
-        fill: $secondary
+            transition: 0.5s ease
+            fill: $secondary
         &:hover
             background: $primary
             border-color: $primary
@@ -694,70 +698,80 @@ button
                 path
                     fill: $white
 
-    &.no-background
-        height: auto
-        width: auto
-        display: block
-        background: none
-        border: none
-        line-height: 0
-        &:hover
+        &.no-background
+            height: auto
+            width: auto
+            display: block
             background: none
-    &.white
-        background: $white
-        border-color: $white
-        color: $secondary
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $secondary
-                border-color: $secondary
-                color: $white
-    &.secondary-border
-        border-color: $secondary
-        background: none
-        color: $secondary
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $secondary
-                color: $white
-    &.white-border
-        border-color: $white
-        background: none
-        color: $white
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $white
-                color: $secondary
-    &.gray-border
-        border-color: var(--black)
-        background: none
-        color: $text
-        &:hover
-            &:not(.swiper-button-disabled)
-                border-color: $primary
-                background: $primary
-                color: $white
-    &.green-border
-        border-color: var(--primary)
-        background: none
-        color: $text
-        &:hover
-            &:not(.swiper-button-disabled)
-                border-color: $primary
-                background: $primary
-                color: $white
-    &.gray-arrow
-        color: #888888
-    &.black-arrow
-        color: $black
-        &:hover
-            &:not(.swiper-button-disabled)
-                color: $secondary
-    &.swiper-button-disabled
-        cursor: no-drop
-        opacity: .4
-    &.swiper-button-lock
-        display: none !important
+            border: none
+            line-height: 0
+            &:hover
+                background: none
+        &.white
+            background: $white
+            border-color: $white
+            color: $secondary
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $secondary
+                    border-color: $secondary
+                    color: $white
+        &.primary-border
+            border-color: $primary
+            background: none
+            color: $primary
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $primary
+                    color: $white
+                    img
+                        filter: invert(1)
+        &.secondary-border
+            border-color: $secondary
+            background: none
+            color: $secondary
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $secondary
+                    color: $white
+        &.white-border
+            border-color: $white
+            background: none
+            color: $white
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $white
+                    color: $secondary
+        &.gray-border
+            border-color: var(--black)
+            background: none
+            color: $text
+            &:hover
+                &:not(.swiper-button-disabled)
+                    border-color: $primary
+                    background: $primary
+                    color: $white
+        &.green-border
+            border-color: var(--primary)
+            background: none
+            color: $text
+            &:hover
+                &:not(.swiper-button-disabled)
+                    border-color: $primary
+                    background: $primary
+                    color: $white
+        &.gray-arrow
+            color: #888888
+        &.black-arrow
+            color: $black
+            &:hover
+                &:not(.swiper-button-disabled)
+                    color: $secondary
+        &.swiper-button-disabled
+            cursor: no-drop
+            opacity: .4
+        &.swiper-button-lock
+            display: none !important
 
 .play-btn
     --btnsize: 51px
@@ -1167,17 +1181,36 @@ button
         font-size: 16px
         color: $black
 
+.heading
+    h2
+        @include gradient-text
+        font-weight: 700
+        font-size: 48px
+        line-height: 1.1
+        text-align: center
+        max-width: 725px
+        font-family: $Telegraf
+        margin: 0 auto 10px
+        @include media(540)
+            font-size: 26px
+    p
+        margin: auto
+        text-align: center
+        max-width: 490px
+
 .contact-form
     padding: 50px 0
     @include media(540)
         padding: 20px 0 50px 0
     .heading
         h2
+            @include gradient-text
             font-weight: 700
             font-size: 36px
             line-height: 1.1
             text-align: center
             max-width: 725px
+            font-family: $Lato
             margin: 0 auto 10px
             @include media(540)
                 font-size: 26px
@@ -1231,3 +1264,15 @@ button
 
     100%
         transform: translate(-5%, -50%)
+
+.border-b-gradient
+    position: relative
+    &::after
+        position: absolute
+        content: ""
+        width: 100%
+        height: 1px
+        background: var(--gradient-c)
+        left: 0
+        right: 0
+        bottom: 0 
