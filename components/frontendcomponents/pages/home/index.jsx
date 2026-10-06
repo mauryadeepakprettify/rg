@@ -9,6 +9,7 @@ import WalkThrough from "./WalkThrough"
 import Location from "./Location"
 import PlanView from "./PlanView"
 import Founder from "./Founder"
+import Gallery from "./Gallery"
 
 const HomePage = () => {
     return (
@@ -21,6 +22,7 @@ const HomePage = () => {
             <MasterPlan />
             <WalkThrough />
             <Location />
+            <Gallery />
             <Founder />
             <PlanView />
         </>
