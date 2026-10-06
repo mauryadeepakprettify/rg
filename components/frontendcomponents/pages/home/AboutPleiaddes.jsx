@@ -18,7 +18,7 @@ const AboutPleiaddes = () => {
 
                         </figure>
                     </div>
-                    <div className="col-b">
+                    <div className="col-b radial-blur">
                         <h2> <span>Luxury</span> About Pleiaddes</h2>
                         <div className="website-content">
                             <p>RG’s Pleiaddes is envisioned as an architectural masterpiece where sophistication meets serenity. Every tower rises like a shining star against Noida’s skyline, creating a distinctive residential address designed around space, greenery and elevated experiences.</p>

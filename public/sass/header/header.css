@@ -1030,7 +1030,7 @@ button {
 .btn.btn-animate {
   color: var(--primary);
   position: relative;
-  padding: 14px 36.5px;
+  padding: 14px 26.5px;
   overflow: hidden;
 }
 .btn.btn-animate::before {
@@ -1038,7 +1038,7 @@ button {
   position: absolute;
   inset: 0;
   background: url("../../../public/icon/border.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 2;
@@ -1051,7 +1051,7 @@ button {
   top: 50%;
   left: 0;
   background: linear-gradient(90deg, rgba(172, 120, 32, 0) 0%, rgba(213, 164, 83, 0.5) 50%, rgba(172, 120, 32, 0) 100%);
-  transform: translate(-5%, -50%);
+  transform: translate(0%, -50%);
   animation: slide 3s linear infinite;
   z-index: 1;
 }
@@ -2046,7 +2046,7 @@ button {
     transform: translate(-5%, -50%);
   }
   50% {
-    transform: translate(120%, -50%);
+    transform: translate(150%, -50%);
   }
   100% {
     transform: translate(-5%, -50%);
@@ -2066,6 +2066,25 @@ button {
   bottom: 0;
 }
 
+.radial-blur {
+  position: relative;
+}
+.radial-blur::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  background: var(--secondary-b);
+  width: 515px;
+  height: 515px;
+  border-radius: 50%;
+  filter: blur(150);
+  position: absolute;
+  z-index: 0;
+  z-index: 0;
+}
+
 header {
   z-index: 10;
   position: fixed;
@@ -2077,7 +2096,7 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--secondary);
+  background: var(--secondary-a);
   height: 0;
   width: 100%;
   transition: 0.4s ease-in-out;
@@ -2110,6 +2129,9 @@ header .header-wrapper .nav {
   display: flex;
   align-items: center;
   gap: 42px;
+}
+header .header-wrapper .nav li .btn-animate {
+  padding: 14px 36.5px;
 }
 header .header-wrapper .nav li .ham-btn span {
   display: block;

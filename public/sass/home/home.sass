@@ -94,15 +94,6 @@
                         clip-path: polygon(0 0, 100% 19%, 100% 90%, 0 100%)
 
             .col-b
-                position: relative
-                &::before
-                    content: ""
-                    position: absolute
-                    top: 40%
-                    right: 0
-                    transform: translateY(-50%)
-                    @include radial-blur()
-
                 h2
                     font-size: 24px
                     color: $white
@@ -184,25 +175,35 @@
 
 .home-secE
     background: var(--secondary)
-    padding: 60px 0       
+    padding: 60px 0
     position: relative
+    &.radial-blur
+        &::before
+            top: 50%
+    .mobile-img
+        width: 92.2%
+        height: 100%
+        z-index: 1
+        position: relative
     .container
         .heading
             h2
         .content
             .swiper-nav
+                z-index: 2
                 flex-direction: column
                 position: absolute
                 top: 55%
                 transform: translateY(-50%)
                 right: 172px
             .aminity-slider
+                z-index: 2
                 border-radius: 34px
-                width: 662px
-                height: 291px
-                position: absolute 
+                width: 51.6%
+                height: 31.8%
+                position: absolute
                 top: 55.5%
-                left: 50.7%
+                left: 50.8%
                 transform: translate(-50%, -50%)
                 .swiper-wrapper
                     .swiper-slide
@@ -211,7 +212,7 @@
                             position: absolute
                             inset: 0
                             content: ""
-                            z-index: 1
+                            z-index: 3
                         img
                             z-index: 0
                             width: 100%
@@ -219,6 +220,7 @@
                             object-fit: cover
                             object-position: center
             .aminity-text-slider
+                z-index: 4
                 position: absolute
                 height: 28px
                 top: 66%
@@ -230,24 +232,303 @@
                             font-size: 24px
                             color: $white
                             font-family: $Lato
-                
+
             .aminity-navigation
                 position: absolute
 
-
-                
-
 .home-secF
     background: var(--secondary)
-    padding: 60px 0
+    padding: 100px 0
     .container
         .heading
             h2
+        .row
+            display: grid
+            grid-template-columns: 1fr 360px
+            gap: 50px
+            margin-top: 80px
+            .col-a
+                .heading
+                    h3
+                        font-size: 24px
+                        color: $white
+                        @include font(400)
+                        span
+                            font-family: $Palmaton
+                            font-size: 36px
+                            @include gradient-text
+                .grid
+                    margin-top: 40px
+                    display: grid
+                    grid-template-columns: repeat(4, 1fr)
+                    gap: 24px
+                    .plan-card
+                        border-radius: 10px
+                        overflow: hidden
+                        figure
+                            height: 149px
+                            overflow: hidden
+                            img
+                                width: 100%
+                                height: 100%
+                                object-fit: cover
+                        figcaption
+                            background: $white
+                            p
+                                color: $black
+                                text-align: center
+                                font-size: 14px
+                                @include font(700)
+                                padding: 8px
+
+            .col-b
+                display: flex
+                align-items: end
+                justify-content: center
+                position: relative
+                gap: 40px
+                padding: 60px
+                background: url('/icon/star.svg') center center / cover no-repeat
+                figure
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    width: 70%
+                    transform: translate(-50%, -50%)
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: contain
+                .btn
+                    padding: 14px 24.5px
 
 .home-secG
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: rgba(0,0,0,.2)
+        z-index: 1
     video
+        z-index: 0
         display: block
         width: 100%
         height: 100%
         object-fit: cover
         max-height: 664px
+    .content
+        z-index: 3
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 40px
+        h2
+            font-family: $Telegraf
+            text-transform: uppercase
+            color: $white
+            font-size: 36px
+            @include font(700)
+        .play-btn
+            --btnsize: 80px
+            background: var(--gradient-a)
+            border: $primary
+            &::before
+                background: $primary
+            &::after
+                border-left: calc(var(--btnsize) / 5.6) solid #000000
+
+.home-secH
+    background: var(--secondary-a)
+    padding: 70px 0
+    position: relative
+    &::before
+        content: ""
+        background: url('/image/home/night.png') center center / cover no-repeat
+        position: absolute
+        inset: 0
+        z-index: 0
+        opacity: 60%
+        width: 100%
+        height: 100%
+    .container
+        position: relative
+        z-index: 1
+        .content
+            margin-top: 60px
+            .star-pattern
+                width: 100%
+                height: 450px
+                position: relative
+                .dot
+                    &::before
+                        content: ""
+                        position: absolute
+                        width: 16px
+                        height: 16px
+                        border-radius: 50%
+                        background: var(--gradient-a)
+                    &::after
+                        content: ""
+                        position: absolute
+                        height: 1px
+                        background: $white
+                        width: 100%
+                .location-detail
+                    position: absolute
+                    .distance
+                        @include gradient-text
+                        font-size: 24px
+                        @include font(700)
+                        margin-bottom: 2px
+                    .ttl
+                        max-width: 153px
+                        color: #FFFFFFB2
+                        font-size: 15px
+                    &:nth-child(1)
+                        position: absolute
+                        bottom: 0
+                        left: 5%
+                        &::before
+                            z-index: 4
+                            left: 84%
+                            top: -68%
+                        &::after
+                            z-index: 3
+                            top: -170.5%
+                            width: 141%
+                            left: 77%
+                            transform: rotate(138deg)
+                    &:nth-child(2)
+                        left: 16.7%
+                        top: 33.8%
+                        &::before
+                            left: 80%
+                            bottom: -90%
+                        &::after
+                            width: 160%
+                            bottom: -41%
+                            left: 91%
+                            transform: rotate(170.2deg)
+                    &:nth-child(3)
+                        left: 41.5%
+                        top: 60.8%
+                        &::before
+                            top: -100%
+                        &::after
+                            width: 117%
+                            top: -130%
+                            left: 7%
+                            transform: rotate(162deg)
+                    &:nth-child(4)
+                        left: 56.9%
+                        top: 9.2%
+                        &::before
+                            bottom: -70%
+                        &::after
+                            top: 257%
+                            left: -10%
+                            width: 119%
+                            transform: rotate(48deg)
+                    &:nth-child(5)
+                        left: 68.1%
+                        top: 75.3%
+                        &::before
+                            top: -70%
+                        &::after
+                            width: 126%
+                            top: -148%
+                            left: -7%
+                            transform: rotate(141.5deg)
+                    &:nth-child(6)
+                        left: 85.4%
+                        top: 30.1%
+                        &::before
+                            top: 50%
+                            transform: translateY(-50%)
+                            left: -30%
+                        &::after
+                            width: 114%
+                            top: -84%
+                            left: -76.5%
+                            transform: rotate(94deg)
+                    &:nth-child(7)
+                        left: 85.4%
+                        top: -10%
+                        &::before
+                            left: -23%
+                            top: 50%
+                            transform: translateY(-50%)
+                        &::after
+                            display: none
+
+        .btn-animate
+            margin: 60px auto 0
+            display: block
+
+.home-secM
+    padding: 80px 0 200px
+    background: var(--secondary-a)
+    overflow: hidden
+    .quote
+        position: absolute
+        right: 0
+        bottom: 100px
+    .container
+        max-width: 877px
+        .heading
+            h2
+                max-width: 439px
+        .content
+            margin-top: 80px
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 50px
+            .col-a
+                figure
+                    z-index: 2
+                    position: relative
+                    width: fit-content
+                    border-radius: 10px
+                    overflow: hidden
+                    box-shadow: 16px 16px 0px 0px #E0B950
+                    img
+                        display: block
+                        width: 100% 
+                        object-fit: cover
+
+            .col-b
+                p
+                    font-size: 24px
+                    color: $white
+                .info
+                    margin: 30px 0
+                    h4
+                        font-size: 24px
+                        @include font(700)
+                        @include gradient-text
+                    p
+                        font-size: 16px
+                    
+
+.home-secO
+    background: var(--secondary)
+    overflow: hidden
+    &::before
+        width: 1171px
+        height: 1171px
+        left: 50%
+        transform: translateX(-50%)
+        top: 0
+    .container
+        display: flex
+        justify-content: center
+        align-items: end
+        img
+            width: 100%
+            position: relative
+            z-index: 2

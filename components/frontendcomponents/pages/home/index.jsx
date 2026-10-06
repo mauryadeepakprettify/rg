@@ -6,6 +6,9 @@ import Star from "./Star"
 import Amenities from "./Amenities"
 import MasterPlan from "./MasterPlan"
 import WalkThrough from "./WalkThrough"
+import Location from "./Location"
+import PlanView from "./PlanView"
+import Founder from "./Founder"
 
 const HomePage = () => {
     return (
@@ -17,6 +20,9 @@ const HomePage = () => {
             <Amenities />
             <MasterPlan />
             <WalkThrough />
+            <Location />
+            <Founder />
+            <PlanView />
         </>
     )
 }
