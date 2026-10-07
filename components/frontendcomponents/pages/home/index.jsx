@@ -13,6 +13,7 @@ import Gallery from "./Gallery"
 import Form from "./Form"
 import Experience from "./Experience"
 import ConstructionUpdate from "./ConstructionUpdate"
+import Legacy from "./Legacy"
 
 const HomePage = () => {
     return (
@@ -28,6 +29,7 @@ const HomePage = () => {
             <Location />
             <Gallery />
             <ConstructionUpdate />
+            <Legacy />
             <Founder />
             <Form />
             <PlanView />
