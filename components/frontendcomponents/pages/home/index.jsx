@@ -10,6 +10,7 @@ import Location from "./Location"
 import PlanView from "./PlanView"
 import Founder from "./Founder"
 import Gallery from "./Gallery"
+import Form from "./Form"
 
 const HomePage = () => {
     return (
@@ -24,6 +25,7 @@ const HomePage = () => {
             <Location />
             <Gallery />
             <Founder />
+            <Form />
             <PlanView />
         </>
     )

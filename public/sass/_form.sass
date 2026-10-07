@@ -2,14 +2,14 @@
 
 .form
     --labelbefore: var(--text)
-    --labelafter: var(--black)
+    --labelafter: var(--text)
     --borderbefore: var(--text)
-    --borderafter: var(--black)
+    --borderafter: var(--text)
     --labelfontbefore: 16px
     --labelfontafter: 14px
     --font: 500
     --inputsize: 42px
-    --color: var(--black)
+    --color: var(--white)
     --borderwidth: 1px
     --labelbackground: none
     --font: normal
@@ -76,10 +76,10 @@
             background: none
             color: var(--color)
             font-size: inherit
-            font-family: inherit
+            font-family: inherit 
             cursor: initial
             padding: 0 var(--paddingleftright)
-            &:focus,&.valid
+            &:focus,&:not(:placeholder-shown)
                 outline: none
                 & ~ label
                     font-size: var(--labelfontafter)
@@ -101,7 +101,7 @@
             @include scrollbar(2px,none,$primary,15px)
             padding: 0 var(--paddingleftright)
             padding-right: 15px
-            &:focus,&.valid
+            &:focus,&:not(:placeholder-shown)
                 outline: none
                 margin-top: 13px
                 height: calc(var(--textareaheight) - 13px)
@@ -181,3 +181,11 @@
         p
             font-size: 14px
             color: $text
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out"
+    -webkit-transition-delay: 9999s

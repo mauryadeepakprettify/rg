@@ -6,15 +6,15 @@ import SlideBtn from "../../atoms/SlideBtn";
 import Image from "next/image";
 
 const Gallery = () => {
-    return (
+    return ( 
         <section className="home-secI border-b-gradient">
             <div className="container">
                 <div className="heading">
                     <h2><span>Gallery</span></h2>
                     <p>See Luxury in Every Frame</p>
                     <div className="swiper-nav swiper-group">
-                        <SlideBtn className="aminity-prev primary-border" />
-                        <SlideBtn className="aminity-next primary-border" />
+                        <SlideBtn className="gallery-prev primary-border" />
+                        <SlideBtn className="gallery-next primary-border" />
                     </div>
                 </div>
 
