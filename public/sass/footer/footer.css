@@ -365,6 +365,7 @@ html {
   --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%);
   --gradient-b: linear-gradient(90deg, #EC1F27 0%, #2E3192 100%);
   --gradient-c: linear-gradient(270deg, #01243D 0%, #ECD382 50%, #01243D 100%);
+  --gradient-d: linear-gradient(270deg, #02182A 0%, #053760 100%);
   --text: #FFFFFFB2;
   --green: green;
   --white: #FFFFFF;
@@ -517,11 +518,7 @@ svg path {
   max-width: var(--container);
   width: 100%;
   margin: 0 auto;
-}
-@media only screen and (max-width: 1300px) {
-  .container {
-    padding: 0 3rem;
-  }
+  padding: 0 3rem;
 }
 @media only screen and (max-width: 1152px) {
   .container {

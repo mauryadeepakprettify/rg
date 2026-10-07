@@ -365,6 +365,7 @@ html {
   --gradient-a: linear-gradient(270deg, #DAAB34 0%, #FEFAD0 100%);
   --gradient-b: linear-gradient(90deg, #EC1F27 0%, #2E3192 100%);
   --gradient-c: linear-gradient(270deg, #01243D 0%, #ECD382 50%, #01243D 100%);
+  --gradient-d: linear-gradient(270deg, #02182A 0%, #053760 100%);
   --text: #FFFFFFB2;
   --green: green;
   --white: #FFFFFF;
@@ -517,11 +518,7 @@ svg path {
   max-width: var(--container);
   width: 100%;
   margin: 0 auto;
-}
-@media only screen and (max-width: 1300px) {
-  .container {
-    padding: 0 3rem;
-  }
+  padding: 0 3rem;
 }
 @media only screen and (max-width: 1152px) {
   .container {
@@ -2258,6 +2255,88 @@ button {
   padding: 14px 20px;
 }
 
+.home-secC {
+  padding: 60px 0;
+  background: var(--gradient-d);
+  position: relative;
+  overflow: hidden;
+}
+.home-secC .bg {
+  position: absolute;
+  left: 68%;
+  bottom: -10px;
+  width: 100%;
+  max-width: 700px;
+  transform: translateX(-50%);
+}
+.home-secC .bg img {
+  display: block;
+}
+.home-secC .bg img.earth {
+  width: 100%;
+  height: 100%;
+}
+.home-secC .bg img.logo {
+  position: absolute;
+  left: 52%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+}
+.home-secC .container .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+.home-secC .container .row .col-a {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-secC .container .row .col-a .heading h6 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+.home-secC .container .row .col-a .heading h2 {
+  text-align: left;
+  margin: 0;
+  color: white;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  margin-bottom: 26px;
+}
+.home-secC .container .row .col-a .heading h2 span {
+  font-family: var(--font-palmaton);
+  font-weight: 400;
+  font-size: 72px;
+  background: var(--gradient-a);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-secC .container .row .col-a p {
+  max-width: 499px;
+}
+.home-secC .container .row .col-a .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 36px;
+}
+.home-secC .container .row .col-b .location {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.home-secC .container .row .col-b .location li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 16px;
+}
+
 .home-secD {
   position: relative;
 }
@@ -2842,4 +2921,64 @@ button {
   margin-top: 24px;
   display: flex;
   justify-content: center;
+}
+
+.home-secK {
+  background: var(--secondary-a);
+  padding: 70px 0;
+}
+.home-secK .container .heading {
+  z-index: 1;
+  position: relative;
+}
+.home-secK .container .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-top: 70px;
+}
+.home-secK .container .grid::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home-secK .container .grid .card {
+  z-index: 1;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.home-secK .container .grid .card:first-child {
+  transform: rotate(-5deg) translateY(20px);
+}
+.home-secK .container .grid .card:last-child {
+  transform: rotate(5deg) translateY(20px);
+}
+.home-secK .container .grid .card figure {
+  height: 277px;
+  overflow: hidden;
+}
+.home-secK .container .grid .card figure img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+.home-secK .container .grid .card figcaption {
+  background: var(--white);
+  padding: 12px 20px;
+}
+.home-secK .container .grid .card figcaption p {
+  font-size: 14px;
+  color: var(--black);
+  font-weight: 700;
+}
+.home-secK .container .grid .card figcaption span {
+  display: block;
+  font-size: 12px;
+  color: #636363;
+}
+.home-secK .container .btn {
+  margin: 70px auto 0;
+  display: block;
 }/*# sourceMappingURL=home.css.map */

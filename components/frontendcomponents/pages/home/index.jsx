@@ -11,6 +11,8 @@ import PlanView from "./PlanView"
 import Founder from "./Founder"
 import Gallery from "./Gallery"
 import Form from "./Form"
+import Experience from "./Experience"
+import ConstructionUpdate from "./ConstructionUpdate"
 
 const HomePage = () => {
     return (
@@ -18,12 +20,14 @@ const HomePage = () => {
             <Hero />
             <Usp />
             <AboutPleiaddes />
+            <Experience />
             <Star />
             <Amenities />
             <MasterPlan />
             <WalkThrough />
             <Location />
             <Gallery />
+            <ConstructionUpdate />
             <Founder />
             <Form />
             <PlanView />
