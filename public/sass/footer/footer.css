@@ -2115,10 +2115,33 @@ button {
 
 footer {
   background: var(--secondary-a);
+  position: relative;
+}
+footer .bottom-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  top: -24px;
+  z-index: 2;
+}
+footer .bottom-nav .container ul {
+  background: var(--gradient-a);
+  border-radius: 50px;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+}
+footer .bottom-nav .container ul li a {
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 700;
 }
 footer .upper-col {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1490196078);
-  padding: 40px 0;
+  padding: 60px 0 40px;
 }
 footer .upper-col .container {
   display: flex;

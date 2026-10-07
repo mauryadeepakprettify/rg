@@ -2800,8 +2800,8 @@ button {
 .home-secI .container .content .gallery-swiper .swiper-slide .gallery-card figure figcaption {
   max-width: 448px;
   position: absolute;
-  bottom: 70px;
-  left: 70px;
+  bottom: 60px;
+  left: 50px;
   z-index: 1;
 }
 .home-secI .container .content .gallery-swiper .swiper-slide .gallery-card figure figcaption h3 {

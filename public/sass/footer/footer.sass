@@ -2,9 +2,33 @@
 
 footer
     background: var(--secondary-a)
+    position: relative
+    .bottom-nav
+        position: absolute
+        left: 50%
+        transform: translateX(-50%) 
+        width: 100%
+        top: -24px
+        z-index: 2
+        .container 
+            ul
+                background: var(--gradient-a)
+                border-radius: 50px
+                padding: 15px 
+                width: 100%
+                display: flex
+                justify-content: center
+                gap: 42px
+                li
+                    a
+                        color: $black
+                        font-size: 14px
+                        @include font(700)
+
+
     .upper-col
         border-bottom: 1px solid #FFFFFF26
-        padding: 40px 0
+        padding: 60px 0 40px
         .container
             display: flex
             justify-content: space-between
@@ -60,4 +84,5 @@ footer
             img
                 vertical-align: middle
                 margin-left: 12px
+
 
