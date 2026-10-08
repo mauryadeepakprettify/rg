@@ -35,6 +35,7 @@ const Legacy = () => {
                             <Swiper 
                             direction="vertical"
                             slidesPerView={1}
+                            spaceBetween={0}
                             className="legacy-image-slider">
                                 {data?.map(({ image, title }, index) => (
                                     <SwiperSlide

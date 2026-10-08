@@ -3150,4 +3150,67 @@ button {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.home-secJ {
+  background: url("/image/home/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0;
+}
+.home-secJ::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(269.98deg, #002D4F 14.82%, rgba(0, 45, 79, 0) 68.46%), linear-gradient(90deg, rgba(0, 45, 79, 0.83) 12.57%, rgba(0, 45, 79, 0) 37.5%);
+}
+.home-secJ .container {
+  z-index: 1;
+  position: relative;
+}
+.home-secJ .container .content {
+  display: grid;
+  grid-template-columns: 1fr 450px 1fr;
+  align-items: center;
+  gap: 100px;
+  min-width: 0;
+  margin-top: 70px;
+}
+.home-secJ .container .content .col-a {
+  min-width: 0;
+}
+.home-secJ .container .content .col-a .swiper {
+  height: 69px;
+}
+.home-secJ .container .content .col-a .swiper .swiper-slide {
+  height: 69px;
+}
+.home-secJ .container .content .col-a .swiper .swiper-slide .floor-info-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.home-secJ .container .content .col-a .swiper .swiper-slide .floor-info-card p {
+  font-size: 16px;
+  color: var(--white);
+}
+.home-secJ .container .content .col-c {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.home-secJ .container .content .col-c .swiper-nav {
+  flex-direction: column;
+  width: 100%;
+  justify-content: end;
+}
+.home-secJ .container .content .col-c .swiper-nav .swiper-prev, .home-secJ .container .content .col-c .swiper-nav .swiper-next {
+  transform: rotate(270deg);
+}
+.home-secJ .container .btn {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 70px auto 0;
+  text-align: center;
 }/*# sourceMappingURL=home.css.map */
