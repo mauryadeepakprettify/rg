@@ -2,6 +2,7 @@ import { Lato, Afacad_Flux } from "next/font/google";
 import localFont from "next/font/local";
 import "@/public/sass/header/header.css"
 import MainTemplate from "@/components/frontendcomponents/templates/MainTemplate";
+import { ReduxProvider } from "@/store/ReduxProvider";
 
 const lato = Lato({
   weight: ["300", "400", "700", "900"],
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${lato.variable} ${afacad.variable} ${palmaton.variable} ${telegraph.variable}`}
     >
-      <body><MainTemplate>{children}</MainTemplate></body>
+      <body> <ReduxProvider><MainTemplate>{children}</MainTemplate></ReduxProvider></body>
     </html>
   );
 } 

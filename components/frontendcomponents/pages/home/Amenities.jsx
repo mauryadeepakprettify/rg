@@ -95,8 +95,7 @@ export default Amenities;
 
 const data = [
     { image: "/image/home/aminities/1.png", title: "The Clubhouse" },
-    { image: "/image/home/aminities/1.png", title: "The Clubhouse" },
-    { image: "/image/home/aminities/1.png", title: "The Clubhouse" },
-    { image: "/image/home/aminities/1.png", title: "The Clubhouse" },
-    { image: "/image/home/aminities/1.png", title: "The Clubhouse" },
+    { image: "/image/home/aminities/2.png", title: "Swimming Pools" },
+    { image: "/image/home/aminities/3.png", title: "Sports & Fitness" },
+    
 ];

@@ -82,16 +82,97 @@
             align-items: center
             gap: 100px
             .col-a
+                position: relative
+                height: 453px
                 figure
-                    height: 453px
+                    height: 100%
                     overflow: hidden
                     width: 100%
+                    clip-path: polygon(0 0, 100% 19%, 100% 90%, 0 100%)
+                    position: absolute
+                    inset: 0
                     img
                         width: 100%
                         height: 100%
                         object-fit: cover
                         object-position: center
                         clip-path: polygon(0 0, 100% 19%, 100% 90%, 0 100%)
+            .fold-slider
+                position: relative
+                overflow: hidden
+                perspective: 1400px
+
+                &__next
+                    position: absolute
+                    inset: 0
+                    z-index: 1
+
+                    img
+                        object-fit: cover
+
+                &__current
+                    position: absolute
+                    inset: 0
+                    z-index: 2
+
+                    > img
+                        object-fit: cover
+
+                &__fold
+                    position: absolute
+                    inset: 0
+                    width: 100%
+                    height: 100%
+                    perspective: 1400px
+
+                .fold-piece
+                    position: absolute
+                    inset: 0
+
+                    width: 100%
+                    height: 100%
+
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: cover
+
+                    transform-origin: center center
+                    transform-style: preserve-3d
+                    backface-visibility: hidden
+
+                    will-change: transform, opacity
+
+                    &--tl
+                        clip-path: polygon(
+                            0 0,
+                            100% 0,
+                            50% 50%,
+                            0 100%
+                        )
+
+                    &--tr
+                        clip-path: polygon(
+                            0 0,
+                            100% 0,
+                            100% 100%,
+                            50% 50%
+                        )
+
+                    &--bl
+                        clip-path: polygon(
+                            0 0,
+                            50% 50%,
+                            100% 100%,
+                            0 100%
+                        )
+
+                    &--br
+                        clip-path: polygon(
+                            50% 50%,
+                            100% 0,
+                            100% 100%,
+                            0 100%
+                        )
 
             .col-b
                 h2
@@ -287,6 +368,7 @@
                             inset: 0
                             content: ""
                             z-index: 3
+                            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0.65) 100%)   
                         img
                             z-index: 0
                             width: 100%
@@ -653,21 +735,24 @@
 .home-secN
     background: var(--secondary-a)
     padding: 100px 0
-    position: relative
-    &::before
-        content: ""
-        position: absolute
-        z-index: 0
-        top: 50%
-        transform: translateY(-50%)
-        width: 100%
-        height: 100%
-        background: url("/icon/half-star.svg") no-repeat right 0% center
+    overflow: hidden
     .container
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            z-index: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 100%
+            height: 100%
+            right: 0
+            background: url("/icon/half-star.svg") no-repeat right 0% center
         .heading
             h2
                 max-width: 501px
         form
+            z-index: 1
             margin: 60px auto 0
             max-width: 501px
             .form-group
@@ -739,7 +824,6 @@
         background-position: center
         mix-blend-mode: multiply
     .container
-
         z-index: 1
         position: relative
         &::before
@@ -747,7 +831,6 @@
             left: 10%
         .grid
             min-width: 0
-
             display: grid
             grid-template-columns: 1fr 320px 1fr
             align-items: center
@@ -790,10 +873,12 @@
                         .swiper-wrapper
                             .swiper-slide
                                 height: 320px
-                                img
-                                    width: 100%
-                                    object-fit: cover
+                                figure
                                     height: 100%
+                                    img
+                                        width: 100%
+                                        object-fit: cover
+                                        height: 100%
 
             .col-c
                 .legacy-content-slider
@@ -817,6 +902,7 @@
                     display: flex !important
                     opacity: 1 !important
             .timeline-wrapper
+                min-width: 0
                 position: relative
                 flex: 1
                 &::before
@@ -832,7 +918,6 @@
                     min-width: 0
                     position: relative
                     .swiper-slide
-                        width: fit-content !important
                         flex-shrink: 0
                         .year
                             padding: 50px 30px 0
@@ -861,6 +946,7 @@
                                 opacity: 1
                                 transition: .5s ease
                             p
+                                text-align: center
                                 @include font(600)
                         &.swiper-slide-active
                             .year

@@ -21,7 +21,7 @@ const Gallery = () => {
                 <div className="content">
                     <Swiper
                         className="gallery-swiper"
-                        loop
+                        loop={false}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
@@ -65,23 +65,14 @@ const data = [
         description: "A destination where wellness, recreation and social experiences come together under one luxurious roof."
     },
     {
-        image: "/image/home/gallery/1.png",
-        title: "The Grand 50,000 Sq. Ft. Clubhouse  ",
-        description: "A destination where wellness, recreation and social experiences come together under one luxurious roof."
+        image: "/image/home/gallery/2.png",
+        title: "The Grand Reception  ",
+        description: "A refined arrival experience that sets the tone for everything that follows, welcoming residents and guests with understated elegance."
     },
     {
-        image: "/image/home/gallery/1.png",
-        title: "The Grand 50,000 Sq. Ft. Clubhouse  ",
-        description: "A destination where wellness, recreation and social experiences come together under one luxurious roof."
+        image: "/image/home/gallery/3.png",
+        title: "Restaurant & Private Dining ",
+        description: "An elegant culinary setting complemented by a dedicated Private Dining Room  designed for intimate meals, special occasions, and memorable gatherings."
     },
-    {
-        image: "/image/home/gallery/1.png",
-        title: "The Grand 50,000 Sq. Ft. Clubhouse  ",
-        description: "A destination where wellness, recreation and social experiences come together under one luxurious roof."
-    },
-    {
-        image: "/image/home/gallery/1.png",
-        title: "The Grand 50,000 Sq. Ft. Clubhouse  ",
-        description: "A destination where wellness, recreation and social experiences come together under one luxurious roof."
-    }
+    
 ]

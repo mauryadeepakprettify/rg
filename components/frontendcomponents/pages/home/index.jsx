@@ -29,11 +29,11 @@ const HomePage = () => {
             <WalkThrough />
             <Location />
             <Gallery />
-            <FloorPlans />
+            <FloorPlans /> 
             <ConstructionUpdate />
             <Legacy />
             <Founder />
-            <Form />
+            <Form />    
             <PlanView />
         </>
     )

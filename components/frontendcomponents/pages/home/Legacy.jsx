@@ -1,14 +1,39 @@
 "use client"
+import { useCallback, useRef } from "react"
 import Image from "next/image"
-import { FreeMode, Navigation } from "swiper/modules"
+import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SlideBtn from "../../atoms/SlideBtn"
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-
+import "swiper/css"
+import "swiper/css/navigation"
 
 const Legacy = () => {
+    const timelineRef = useRef(null)
+    const followersRef = useRef([])
+
+    const registerFollower = useCallback((swiper) => {
+        if (!followersRef.current.includes(swiper)) {
+            followersRef.current.push(swiper)
+        }
+    }, [])
+
+    const unregisterFollower = useCallback((swiper) => {
+        followersRef.current = followersRef.current.filter((s) => s !== swiper)
+    }, [])
+
+    const syncFollowers = useCallback((master) => {
+        const index = master.realIndex
+        followersRef.current.forEach((follower) => {
+            if (!follower.destroyed && follower.activeIndex !== index) {
+                follower.slideTo(index)
+            }
+        })
+    }, [])
+
+    const goToYear = useCallback((index) => {
+        timelineRef.current?.slideToLoop(index)
+    }, [])
+
     return (
         <section className="home-secL border-b-gradient">
             <div className="container  radial-blur">
@@ -18,28 +43,37 @@ const Legacy = () => {
 
                 <div className="grid ">
                     <div className="col-a">
-                        <Swiper 
-                        direction="vertical"
-                        slidesPerView={1}
-                        className="legacy-heading-slider">
-                            {data?.map(({ title }, index) => (
-                                <SwiperSlide key={index}>
-                                    <h4>{title}</h4>
+                        <Swiper
+                            direction="vertical"
+                            loop
+                            slidesPerView={1}
+                            allowTouchMove={false}
+                            onSwiper={registerFollower}
+                            onDestroy={unregisterFollower}
+                            speed={1200}
 
+                            className="legacy-heading-slider">
+                            {data.map(({ title, year }) => (
+                                <SwiperSlide key={year}>
+                                    <h4>{title}</h4>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
                     </div>
                     <div className="col-b">
                         <div className="slider-container">
-                            <Swiper 
-                            direction="vertical"
-                            slidesPerView={1}
-                            spaceBetween={0}
-                            className="legacy-image-slider">
-                                {data?.map(({ image, title }, index) => (
-                                    <SwiperSlide
-                                        key={index}>
+                            <Swiper
+                                direction="vertical"
+                                loop
+                                slidesPerView={1}
+                                spaceBetween={0}
+                                speed={1200}
+                                allowTouchMove={false}
+                                onSwiper={registerFollower}
+                                onDestroy={unregisterFollower}
+                                className="legacy-image-slider"> 
+                                {data.map(({ image, title, year }) => (
+                                    <SwiperSlide key={year}>
                                         <figure>
                                             <Image src={image} alt={title} width={320} height={320} />
                                         </figure>
@@ -49,12 +83,17 @@ const Legacy = () => {
                         </div>
                     </div>
                     <div className="col-c">
-                        <Swiper 
-                        direction="vertical"
-                        slidesPerView={1}
-                        className="legacy-content-slider">
-                            {data?.map(({ description }, index) => (
-                                <SwiperSlide key={index}>
+                        <Swiper
+                            direction="vertical"
+                            slidesPerView={1}
+                            loop
+                            speed={1200}
+                            allowTouchMove={false}
+                            onSwiper={registerFollower}
+                            onDestroy={unregisterFollower}
+                            className="legacy-content-slider">
+                            {data.map(({ description, year }) => (
+                                <SwiperSlide key={year}>
                                     <p>{description}</p>
                                 </SwiperSlide>
                             ))}
@@ -63,29 +102,39 @@ const Legacy = () => {
                 </div>
 
                 <div className="swiper-nav swiper-group">
-                    <SlideBtn className="leagcy-prev primary-border" />
+                    <SlideBtn className="legacy-prev primary-border" />
                     <div className="timeline-wrapper">
-                        <Swiper modules={[Navigation]}
-                            slidesPerView="auto"
-                            loop={true} 
+                        <Swiper
+                            modules={[Navigation]}
+                            slidesPerView={8}
+                            loop={true}
+                            speed={1200}
                             navigation={{
-                                nextEl: ".leagcy-next",
+                                nextEl: ".legacy-next",
                                 prevEl: ".legacy-prev",
-                            }} className="timeline-swiper">
-                            {
-                                data?.map(({ year }, index) => {
-                                    return (
-                                        <SwiperSlide
-
-                                            key={index}><div className="year">
-                                                <p>{year}</p>
-                                            </div></SwiperSlide>
-                                    )
-                                })
-                            }
+                            }}
+                            onSwiper={(swiper) => {
+                                timelineRef.current = swiper
+                            }}
+                            onSlideChange={syncFollowers}
+                            className="timeline-swiper">
+                            {data.map(({ year }, index) => (
+                                <SwiperSlide key={year}>
+                                    <div
+                                        className="year"
+                                        role="button"
+                                        tabIndex={0}
+                                        onClick={() => goToYear(index)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter" || e.key === " ") goToYear(index)
+                                        }}>
+                                        <p>{year}</p>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </div>
-                    <SlideBtn className="leagcy-next primary-border" />
+                    <SlideBtn className="legacy-next primary-border" />
                 </div>
             </div>
         </section>
