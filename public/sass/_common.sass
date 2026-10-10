@@ -604,6 +604,71 @@ button
             path
                 stroke: $black
 
+.enquire-modal
+    right: 0
+    max-width: 480px
+    background: var(--gradient-d)
+    transform: translateX(100%)
+    transition: .7s ease
+    position: fixed
+    z-index: 9999
+    &::before
+        z-index: 2
+    &.is-open
+        transform: translateX(0%)
+    .close
+        display: flex
+        align-items: center
+        gap: 0 10px
+        top: 40px
+        right: 40px
+        @include media(675)
+            top: 20px
+            right: 20px
+        path
+            stroke: $black
+    .modal-body
+        padding: 60px 42px 20px
+        height: 100%
+        overflow-y: auto
+        @include scrollbar
+        @include media(675)
+            padding: 40px 25px 50px
+        .heading
+            margin-bottom: 35px
+            @include media(675)
+                margin-bottom: 25px
+            .ico
+                display: block
+                margin: 0 auto
+                max-width: 75px
+                margin-bottom: 15px
+                svg
+                    width: 100%
+                    height: auto
+            h2
+                font-size: 38px
+                text-align: center
+            p
+                text-align: center
+                color: $text
+                font-size: 14px
+                line-height: 1.4
+                text-transform: capitalize
+                margin-top: 10px
+        .form
+            // --bacground: var(--white)
+            // --label: rgb(0 0 0 / .6)
+            // --color: var(--black)
+            --item: 1
+            --font: 400
+            --border: var(--pink)
+            gap: 18px 0
+            .btn-container
+                margin-top: 24px
+                display: flex
+                justify-content: center
+
 .form-grid
     --item: 1
     --gaplr: 30px

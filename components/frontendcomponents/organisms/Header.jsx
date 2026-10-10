@@ -3,10 +3,13 @@ import Image from "next/image"
 import Link from "next/link"
 import Button from "../atoms/Button"
 import { useEffect, useState } from "react"
+import { useModal } from "@/hooks/useModal"
 
 const Header = () => {
 
     const [isHeaderFixed, setIsHeaderFixed] = useState(false)
+
+    const { openModal } = useModal();
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -27,7 +30,7 @@ const Header = () => {
 
                 <ul className="nav">
                     <li>
-                        <Button className="btn-animate"> Schedule a Site Visit </Button>
+                        <Button onClick={() => openModal("enquire")} className="btn-animate"> Schedule a Site Visit </Button>
                     </li>
 
                     <li>

@@ -1,9 +1,15 @@
+"use client"
 import CloseModal from "../atoms/CloseModal"
 import EnquireFields from "./EnquireFields"
+import { useSelector } from "react-redux"
 
 const EnquireModal = () => {
+    const { isModal } = useSelector((state) => state.modal)
+
+    console.log(isModal)
+
     return (
-        <div className="modal enquire-modal">
+        <div className={`modal enquire-modal ${isModal === "enquire" ? "is-open" : ""}`}>
             <CloseModal />
             <div className="modal-body">
                 <div className="heading">

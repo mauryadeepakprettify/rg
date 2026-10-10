@@ -1175,6 +1175,101 @@ button {
   stroke: var(--black);
 }
 
+.enquire-modal {
+  right: 0;
+  max-width: 480px;
+  background: var(--gradient-d);
+  transform: translateX(100%);
+  transition: 0.7s ease;
+  position: fixed;
+  z-index: 9999;
+}
+.enquire-modal::before {
+  z-index: 2;
+}
+.enquire-modal.is-open {
+  transform: translateX(0%);
+}
+.enquire-modal .close {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+  top: 40px;
+  right: 40px;
+}
+@media only screen and (max-width: 675px) {
+  .enquire-modal .close {
+    top: 20px;
+    right: 20px;
+  }
+}
+.enquire-modal .close path {
+  stroke: var(--black);
+}
+.enquire-modal .modal-body {
+  padding: 60px 42px 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+.enquire-modal .modal-body::-webkit-scrollbar {
+  width: 2px;
+  background: none;
+  height: 2px;
+}
+.enquire-modal .modal-body::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+.enquire-modal .modal-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+@media only screen and (max-width: 675px) {
+  .enquire-modal .modal-body {
+    padding: 40px 25px 50px;
+  }
+}
+.enquire-modal .modal-body .heading {
+  margin-bottom: 35px;
+}
+@media only screen and (max-width: 675px) {
+  .enquire-modal .modal-body .heading {
+    margin-bottom: 25px;
+  }
+}
+.enquire-modal .modal-body .heading .ico {
+  display: block;
+  margin: 0 auto;
+  max-width: 75px;
+  margin-bottom: 15px;
+}
+.enquire-modal .modal-body .heading .ico svg {
+  width: 100%;
+  height: auto;
+}
+.enquire-modal .modal-body .heading h2 {
+  font-size: 38px;
+  text-align: center;
+}
+.enquire-modal .modal-body .heading p {
+  text-align: center;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.enquire-modal .modal-body .form {
+  --item: 1;
+  --font: 400;
+  --border: var(--pink);
+  gap: 18px 0;
+}
+.enquire-modal .modal-body .form .btn-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
 .form-grid {
   --item: 1;
   --gaplr: 30px;
